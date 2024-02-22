@@ -1,0 +1,15 @@
+{% extends "default.njk" %}
+
+{% block main %}
+  <h1>Rick and Morty Characters</h1>
+  <ul id="characters-list">
+  {% for character in data %}
+    <a href="/character/{{ character.id }}">
+    <li>
+      <img src="{{ character.image }}" alt="{{ character.name }}">
+      <p>{{ character.name }}</p>
+    </li>
+    </a>
+    {% endfor %}
+  </ul>
+{% endblock %}
